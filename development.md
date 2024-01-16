@@ -37,3 +37,16 @@ netsh advfirewall firewall set rule name="File and Printer Sharing (SMB-In)" new
 ## 3. Agent Configuration
 
 ## 4. User Creation
+Create a common admin user in the network such that the agent can access the guests
+```bash
+#create user
+net user username pass /add
+
+#add the use to admin group
+net localgroup Administrators /add username
+
+#check whether the user is added to group
+net localgroup Administrators
+```
+
+
